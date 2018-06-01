@@ -1,0 +1,71 @@
+<section class="page-section col-xs-12">
+  <div class="book-content user-form-content">
+    <form
+        #f="ngForm"
+        (ngSubmit)="createBook(f.value)"
+        class="form-signup form-user"
+    >
+        <h2 class="form-signup-heading">{{ !book_id ? 'Add Book': 'Edit Book' }}</h2>
+        <div
+            *ngIf="validCreateBook"
+            class="alert alert-success">
+            {{ !book_id ? 'Create a new book success': 'Edit Book success' }}
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input
+                name="title"
+                id="title"
+                type="text"
+                ngModel="{{book_input.title}}"
+                #title="ngModel"
+                class="form-control"
+                placeholder="Title"
+                required
+            >
+            <div
+                *ngIf="title.touched && title.invalid"
+                class="text-error"
+            >
+                <div *ngIf="title.errors.required">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input
+                name="author"
+                id="author"
+                type="text"
+                ngModel="{{book_input.author}}"
+                #author="ngModel"
+                class="form-control"
+                placeholder="Author"
+                required
+            >
+            <div
+                *ngIf="author.touched && author.invalid"
+                class="text-error"
+            >
+                <div *ngIf="author.errors.required">Author is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              ngModel="{{book_input.description}}"
+              #description="ngModel"
+              class="form-control"
+              placeholder="Description"
+            ></textarea>
+        </div>
+        <button
+            class="btn btn-lg btn-success btn-block"
+            type="submit"
+        >
+            Submit
+        </button>
+    </form>
+  </div>
+</section>

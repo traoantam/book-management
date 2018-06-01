@@ -1,0 +1,17 @@
+<section class="page-section col-xs-12 bg-white book-detail-page">
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
+      <img src="assets/images/book-demo.jpg" alt="book" class="book-image-detail">
+    </div>
+    <div class="col-xs-12 col-md-9">
+      <h2>{{ book_detail.title }}</h2>
+      <span class="author field-book-item"><i class="fa fa-user"></i>{{ book_detail.author }}</span>
+      <span class="date field-book-item"><i class="fa fa-calendar-times-o"></i>{{ book_detail.created_at | date }}</span>
+      <div class="book-description" *ngIf="book_detail.description">
+        {{ book_detail.description }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<p>{{ book_detail | json }}</p>

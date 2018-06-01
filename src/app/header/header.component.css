@@ -1,0 +1,32 @@
+#user-info .sub-info {
+    display: none;
+    position: absolute;
+    top: 60px;
+    background: white;
+    width: 165px;
+    padding: 0;
+    z-index: 99;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#user-info .username:hover > .sub-info {
+    display: block;
+}
+
+#user-info ul {
+    margin-bottom: 0;
+}
+
+#user-info .username {
+    position: relative;
+    padding: 20px;
+    color: blue;
+}
+
+#user-info .sub-info li a {
+    text-align: left;
+    color: black;
+    padding: 5px 15px;
+    display: block;
+    cursor: pointer;
+}

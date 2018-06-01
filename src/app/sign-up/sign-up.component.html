@@ -1,0 +1,107 @@
+<div class="register-content user-form-content">
+    <form
+        [formGroup]="form"
+        (ngSubmit)="signUp(form.value)"
+        class="form-signup form-user"
+    >
+        <h2 class="form-signup-heading">Register</h2>
+        <div
+            *ngIf="invalidRegister"
+            class="alert alert-danger"
+        >
+            Register user error
+        </div>
+        <div
+            *ngIf="validResgister"
+            class="alert alert-success"
+        >
+            Register user success
+        </div>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+                formControlName="firstName"
+                id="firstName"
+                type="text"
+                class="form-control"
+            >
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+                formControlName="lastName"
+                id="lastName"
+                type="text"
+                class="form-control"
+            >
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input
+                type="email"
+                id="inputEmail"
+                formControlName="email"
+                class="form-control"
+                placeholder="Email"
+            >
+            <div
+                class="text-error"
+                *ngIf="email.touched && !email.valid"
+            >
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.pattern">Email doesn't match</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for>Password</label>
+            <input
+                type="password"
+                id="inputPassword"
+                formControlName="password"
+                class="form-control"
+                placeholder="Password"
+                required
+            >
+            <div
+                *ngIf="password.touched && password.invalid"
+                class="text-error"
+            >
+                <div *ngIf="password.errors.required">New password is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for>Comfirm Password</label>
+            <input
+                type="password"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                class="form-control"
+                placeholder="Confirm Password"
+                required
+            >
+            <div
+                *ngIf="confirmPassword.touched && confirmPassword.invalid"
+                class="text-error"
+            >
+                <div *ngIf="confirmPassword.errors.required">Confirm password is required</div>
+            </div>
+            <div
+                *ngIf="confirmPassword.valid && form.invalid && form.errors.passwordsShouldMatch"
+                class="text-error"
+            >
+                Password do not match
+            </div>
+        </div>
+        <button
+            class="btn btn-lg btn-success btn-block"
+            type="submit"
+        >
+            Sign Up
+        </button>
+    </form>
+    <div class="register-link m-t-15 text-center">
+        <p>
+            <a routerLink="/sign-in">Back to Login</a>
+        </p>
+    </div>
+</div>

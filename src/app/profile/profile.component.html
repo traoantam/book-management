@@ -1,0 +1,77 @@
+<div class="col-xs-12 col-md-6">
+  <div class="bg-white">
+      <h2 class="uppercase title">Profile Information</h2>
+      <ul class="profile-infor">
+        <li><span>First Name:</span>{{ profile.first_name }}</li>
+        <li><span>Last Name:</span>{{ profile.last_name }}</li>
+        <li><span>Email:</span>{{ profile.email }}</li>
+      </ul>
+  </div>
+</div>
+<div class="edit-content col-xs-12 col-md-6">
+  <div class="bg-white">
+    <form
+      #f="ngForm"
+      (ngSubmit)="updateProfile(f.value)"
+      class="form-edit-profile form-user"
+    >
+      <h2 class="form-signup-heading">Edit Profile</h2>
+      <div
+          *ngIf="isSuccessed"
+          class="alert alert-success">
+          Edit profile success
+      </div>
+      <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+              name="firstName"
+              id="firstName"
+              ngModel="{{profile.first_name}}"
+              #firstName="ngModel"
+              type="text"
+              class="form-control"
+              placeholder="First Name"
+          >
+      </div>
+      <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+              name="lastName"
+              id="lastName"
+              ngModel="{{profile.last_name}}"
+              #lastName="ngModel"
+              type="text"
+              class="form-control"
+              placeholder="Last Name"
+          >
+      </div>
+      <div class="form-group">
+          <label for="inputEmail">Email</label>
+          <input
+              type="email"
+              id="inputEmail"
+              name="email"
+              ngModel="{{profile.email}}"
+              #email="ngModel"
+              pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+              class="form-control"
+              placeholder="Email"
+              required
+          >
+          <div
+              class="text-error"
+              *ngIf="email.touched && !email.valid"
+          >
+              <div *ngIf="email.errors.required">Email is required</div>
+              <div *ngIf="email.errors.pattern">Email doesn't match</div>
+          </div>
+      </div>
+      <button
+          class="btn btn-lg btn-success btn-block"
+          type="submit"
+      >
+          Sign Up
+      </button>
+    </form>
+  </div>
+</div>

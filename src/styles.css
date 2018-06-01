@@ -1,1 +1,250 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+body { 
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #878787;
+    background: #f1f2f7;
+}
+
+h1, h2, h3 {
+    color: #373757;
+}
+
+body.sign-in,
+body.sign-up {
+    background-color: #343a40 !important;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.form-control.ng-touched.ng-invalid {
+    border: 2px solid red;
+}
+
+.text-error {
+    color: red;
+}
+
+.user-form-content {
+    max-width: 540px;
+    margin: 8vh auto;
+    background: #ffffff;
+    border-radius: 2px;
+  }
+  
+.form-user {
+    padding: 30px 30px 20px;
+}
+
+.form-user h2 {
+    text-align: center;
+    margin: 25px 0;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-user label{
+    color: #878787;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 20px 13px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-user .btn {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 0;
+}
+
+.register-link {
+    border-top: 1px solid #e7e7e7;
+    padding: 15px;
+}
+
+.register-link a {
+    color: #ff2e44;
+}
+
+.no-padding {
+    padding: 0!important;
+}
+
+#sidebar-left nav.navbar-default{
+    background: #272c33;
+    display: table-cell;
+    height: 100vh;
+    min-height: 100%;
+    padding: 0 25px;
+    vertical-align: top;
+    transition: width 0.3s ease;
+    border-radius: 0;
+    border: 0;
+}
+
+#sidebar-left .navbar-header {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid; 
+    color: #c8c9ce;
+}
+
+#sidebar-left .navbar-header .fa {
+    margin: 8px 0;
+    color: white;
+}
+
+.main-menu {
+    padding: 0;
+}
+
+.main-menu ul.navbar-nav li {
+    width: 100%;
+}
+
+.main-menu ul.navbar-nav li .sub-menu {
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    padding: 0 0 0 35px;
+    position: static;
+}
+
+.main-menu ul.navbar-nav li .sub-menu li {
+    position:  relative;
+}
+
+.main-menu ul.navbar-nav li .sub-menu i{
+    color: #c8c9ce;
+    float: left;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+    top: 9px;
+}
+
+.main-menu ul.navbar-nav li .sub-menu a{
+    padding: 2px 0 2px 30px;
+}
+
+.main-menu ul.navbar-nav li a {
+    background-color: transparent!important;
+    color: #c8c9ce!important;
+    line-height: 30px;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+.main-menu ul.navbar-nav li a.dropdown-toggle {
+    pointer-events: none;
+}
+
+.main-menu ul.navbar-nav li:hover > a,
+.main-menu ul.navbar-nav li:hover > i,
+.main-menu ul.navbar-nav li:hover > a:before {
+    color: white!important;
+}
+
+li.menu-item-has-children > a:before {
+    content: "\f105";
+    color: #c8c9ce;
+    font-family: 'Fontawesome';
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    text-align: right;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+}
+
+li.menu-item-has-children.expanded > a:before {
+    content: "\f107";
+}
+
+.main-menu ul.navbar-nav li > a .menu-icon {
+    float: left;
+    margin-top: 5px;
+    width: 55px;
+    text-align: left;
+    z-index: 9;
+}
+
+#main-content {
+    padding: 15px;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.header {
+    background-color: white;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+    clear: both;
+    display: inline-block;
+    width: 100%;
+}
+
+.uppercase {
+    text-transform: uppercase
+}
+
+.bg-white {
+    background-color: white;
+    margin: 10px 0;
+    padding: 20px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+h2.title {
+    text-align: center;
+    margin-bottom: 25px;
+    display: inline-block;
+    width: 100%;
+}
+
+section {
+    padding: 15px;
+    display: block;
+}
+
+.redirect-page {
+    margin: 20px 0;
+}

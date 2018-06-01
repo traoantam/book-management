@@ -1,0 +1,18 @@
+<div id="user-info">
+  <ul class="pull-right">
+    <li class="username" *ngIf="authService.isLoggedIn()">
+      <a href="#">
+          {{ authService.currentUser() }}
+      </a>
+      <ul class="sub-info">
+        <li>
+          <a routerLink="/profile">Edit profile</a>
+        </li>
+        <li>
+          <a (click)="authService.logout()">Logout</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</div>

@@ -1,0 +1,13 @@
+.profile-infor li {
+    color: #007bff;
+}
+
+.profile-infor li span {
+    width: 100px;
+    float: left;
+    color: #878787;
+}
+
+.form-edit-profile {
+    padding: 0;
+}

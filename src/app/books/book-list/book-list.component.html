@@ -1,0 +1,61 @@
+<div class="redirect-page col-xs-12">
+  <a routerLink="/books/add" class="btn btn-primary">Add Book</a>
+</div>
+<section class="page-section col-xs-12">
+    <h2 class="uppercase title">Book List</h2>
+    <div
+      *ngIf="deleteStatus"
+      class="alert alert-success">
+      Delete book success !
+    </div>
+    <table class="table table-bordered table-hover bg-white table-book-list">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Description</th>
+          <th scope="col">Created Date</th>
+          <th scope="col">Updated Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="books != ''">
+          <tr *ngFor="let book of books | orderBy: order:reverse:'case-insensitive' | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>
+              {{ book.id }}
+            </td>
+            <td>
+              {{ book.title }}
+            </td>
+            <td>
+              {{ book.author }}
+            </td>
+            <td>
+              {{ book.description }}
+            </td>
+            <td>
+              {{ book.created_at | date }}
+            </td>
+            <td>
+              {{ book.updated_at | date }}
+            </td>
+            <td>
+              <a [routerLink]="['/books/detail', book.id]" title="View"><i class="fa fa-eye"></i></a> |
+              <a [routerLink]="['/books/edit', book.id]" title="Edit"><i class="fa fa-edit"></i></a> | 
+              <a (click)="deleteBook(book.id)" title="Remove"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        </ng-container> 
+        <ng-container *ngIf="books == ''">
+          <tr>
+            <td colspan="7" class="text-center text-error">Books is empty !</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</section>
+
+

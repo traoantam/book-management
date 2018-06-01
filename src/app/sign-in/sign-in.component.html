@@ -1,0 +1,68 @@
+<div class="login-content user-form-content">
+    <form
+        class="form-signin form-user"
+        #f="ngForm"
+        (ngSubmit)="signIn(f.value)"
+    >
+        <h2 class="form-signin-heading">Login</h2>
+        <div
+            *ngIf="invalidLogin"
+            class="alert alert-danger"
+        >
+            Invalid username and/or password.
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input
+                type="email"
+                id="inputEmail"
+                name="email"
+                ngModel
+                #email="ngModel"
+                class="form-control"
+                placeholder="Email"
+                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                required
+            >
+            <div
+                class="text-error"
+                *ngIf="email.touched && !email.valid"
+            >
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.pattern">Email doesn't match</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input
+                type="password"
+                id="inputPassword"
+                name="password"
+                ngModel
+                #pass="ngModel"
+                class="form-control"
+                placeholder="Password"
+                required
+            >
+            <div
+                class="text-error"
+                *ngIf="pass.touched && !pass.valid"
+            >
+                <div *ngIf="pass.errors.required">Password is required</div>
+            </div>
+        </div>
+        <button
+            class="btn btn-lg btn-success btn-block"
+            type="submit"
+            [disabled]="!f.valid"
+        >
+            Sign in
+        </button>
+    </form>
+    <div class="register-link m-t-15 text-center">
+        <p>
+            Don't have account ?
+            <a routerLink="/sign-up">Sign Up Here</a>
+        </p>
+    </div>
+</div>
