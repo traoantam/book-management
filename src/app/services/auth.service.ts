@@ -54,12 +54,9 @@ export class AuthService {
 
   logout() { 
     let headers = this.headerToken();
-    this.http.delete(this.rootUrl+'/auth/sign_out', { headers: headers })
-      .subscribe((response:any) => {
-        if (response.success) {
-          this.removeLocalToken();
-          this.router.navigate(['/sign-in']);
-        }
+    return this.http.delete(this.rootUrl+'/auth/sign_out', { headers: headers })
+      .map(response => {
+        return response;
       });
       
   }
