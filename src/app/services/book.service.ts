@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class BookService {
 
-  readonly rootUrl = 'http://bm-fe.herokuapp.com';
+  readonly rootUrl = 'https://bm-fe.herokuapp.com';
   constructor(private http: HttpClient, private router: Router) {
     
   }
