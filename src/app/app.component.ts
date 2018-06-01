@@ -32,4 +32,8 @@ export class AppComponent {
   toggle() {
     this.isExpanded = !this.isExpanded;
   }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn()?true:false;
+  }
 }

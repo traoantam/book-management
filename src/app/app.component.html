@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div id="sidebar-left" class="col-xs-12 col-md-2 no-padding" *ngIf="authService.isLoggedIn()">
+        <div id="sidebar-left" class="col-xs-12 col-md-2 no-padding" *ngIf="isLoggedIn()">
             <div id="main-menu" class="main-menu collapse navbar-collapse no-padding">
                 <nav class="navbar navbar-expand-sm navbar-default">
 
@@ -38,8 +38,8 @@
                 </nav>
             </div><!-- /.navbar-collapse -->
         </div>
-        <div id="main-content" class="col-xs-12 no-padding" [ngClass]="authService.isLoggedIn()?'col-md-10':'col-md-12'">
-            <header *ngIf="authService.isLoggedIn()" class="header col-xs-12"></header>
+        <div id="main-content" class="col-xs-12 no-padding" [ngClass]="isLoggedIn()?'col-md-10':'col-md-12'">
+            <header *ngIf="isLoggedIn()" class="header col-xs-12"></header>
             <router-outlet></router-outlet>
         </div>
     </div>
