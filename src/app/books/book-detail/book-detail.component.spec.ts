@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookDetailComponent } from './book-detail.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('BookDetailComponent', () => {
   let component: BookDetailComponent;

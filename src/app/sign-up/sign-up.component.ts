@@ -10,7 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
   invalidRegister: boolean;
   validResgister = false;
   form: FormGroup;
@@ -29,6 +29,11 @@ export class SignUpComponent {
     }, {
       validator: PasswordValidators.passwordsShouldMatch
     });
+  }
+
+  ngOnInit() {
+    if (this.authService.isLoggedIn())
+      this.router.navigate(['/']);
   }
 
   get firstName() { return this.form.get('firstName'); }
