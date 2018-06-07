@@ -21,8 +21,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { BooksComponent } from './books/books.component';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
-import { MessagesComponent } from './messages/messages.component';
-
 
 @NgModule({
   declarations: [
@@ -35,8 +33,7 @@ import { MessagesComponent } from './messages/messages.component';
     ProfileComponent,
     BooksComponent,
     BookListComponent,
-    BookDetailComponent,
-    MessagesComponent
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
