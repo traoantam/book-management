@@ -1,15 +1,15 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { TestBed, inject, async } from '@angular/core/testing';
 
 import { BookService } from './book.service';
 
 describe('BookService', () => {
+
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       providers: [BookService]
     });
   });
 
-  it('should be created', inject([BookService], (service: BookService) => {
-    expect(service).toBeTruthy();
-  }));
 });

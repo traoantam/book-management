@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookDetailComponent } from './book-detail.component';
 import { ActivatedRoute } from '@angular/router';
+import { BookService } from '../../services/book.service';
 
 describe('BookDetailComponent', () => {
   let component: BookDetailComponent;
@@ -9,7 +10,8 @@ describe('BookDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookDetailComponent ]
+      declarations: [ BookDetailComponent ],
+      providers: [{provide: ActivatedRoute}, BookService]
     })
     .compileComponents();
   }));
@@ -20,7 +22,4 @@ describe('BookDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

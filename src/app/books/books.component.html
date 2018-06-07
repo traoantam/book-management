@@ -63,6 +63,7 @@
         <button
             class="btn btn-lg btn-success btn-block"
             type="submit"
+            [disabled]="!f.valid?true:false"
         >
             Submit
         </button>

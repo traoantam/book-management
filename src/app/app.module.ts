@@ -21,6 +21,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BooksComponent } from './books/books.component';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { BookDetailComponent } from './books/book-detail/book-detail.component';
     ProfileComponent,
     BooksComponent,
     BookListComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
